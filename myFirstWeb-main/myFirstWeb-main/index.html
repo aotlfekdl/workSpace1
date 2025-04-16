@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>kh정보교욱원따라해보기</title>
+    <style>
+        
+
+    </style>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="index1.css">
+</head>
+<body>
+    <div class="wrap">
+        <div id="topbar">
+            <div id="topsection">
+                <ul>
+                    <li><a href="">IT</a></li>
+                    <li><a href="">게임</a></li>
+                    <li><a href="">영상</a></li>
+                </ul>
+
+            </div>
+        </div>
+        <div id="header">
+            <div id="header_1">
+                <div id="header_1-1"></div>
+                <div id="header_1-2">
+                    <div id="header_1-2-1">
+                        <h3><b>1544-9970</b></h3>
+                    </div>
+                    <div id="header_1-2-2">
+                        <p>전국대표문의전화(연중무휴)</p>
+                    </div>
+                </div>
+            </div>
+            <div id="header_2"></div>
+            <div id="header_3">
+            </div>
+        </div>
+        <div id="navigator">
+            <ul>
+                <li><a href="">국비지원과정</a>
+                <ul>
+                    <li><a href="">개발자 양성과정</a></li>
+                    <li><a href="">정보보안 전문가</a></li>
+                    <li><a href="">K-디지털 기초역량훈련</a></li>
+                    <li><a href="">K-디지털 트레이닝</a></li>
+                    <li><a href="">개강일정</a></li>
+                    <li><a href="">국비지원이란?</a></li>
+                    <li><a href="">게임 제작사 과정</a></li>
+                    <li><a href="">영상 제작자 과정정</a></li>
+
+
+                </ul>
+                </li>
+                <li><a href="">교육원소개</a>
+                    <ul>
+                        <li><a href="">KH Overview</a></li>
+                        <li><a href="">About KH</a></li>
+                        <li><a href="">걸어온 길</a></li>
+                        <li><a href="">강사소개</a></li>
+                        <li><a href="">상담선생님 소개</a></li>
+                        <li><a href="">사업 제휴 문의</a></li>
+                        <li><a href="">언론보도</a></li>
+                        <li><a href="">시설안내</a></li>
+                        <li><a href="">오시는길</a></li>
+                        <li><a href="">강사 구인인</a></li>
+                    </ul>
+                </li>
+                <li><a href="">취업지원센터</a>
+                    <ul>
+                        <li><a href="">취업 프로세스</a></li>
+                        <li><a href="">학사공지</a></li>
+                        <li><a href="">기업모의면접</a></li>
+                        <li><a href="">기업 초청특강</a></li>
+                        <li><a href="">취업현황</a></li>
+                        <li><a href="">협력기업</a></li>
+                        <li><a href="">인재 채용 문의</a></li>
+                    </ul>
+                </li>
+                <li><a href="">프로젝트</a>
+                    <ul>
+                        <li><a href="">KH 프로젝트</a></li>
+                        <li><a href="">수강생 프로젝트트</a></li>
+                    </ul>
+                </li>
+                <li><a href="">커뮤니티</a>
+                    <ul>
+                        <li><a href="">교육정보</a></li>
+                        <li><a href="">수강생 인터뷰</a></li>
+                        <li><a href="">수강후기</a></li>
+                        <li><a href="">KH 채널 ON</a></li>
+                    </ul>
+                </li>
+                <li><a href="">산학연계</a>
+                    <ul>
+                        <li><a href="">기술자문의원</a></li>
+                        <li><a href="">실무자 인터뷰</a></li>
+                        <li><a href="">산학협력</a></li>
+                        <li><a href="">IT특강강</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="">마이페이지</a>
+                    <ul>
+                        <li><a href="loginpage.html" target="_blank">로그인</a></li>
+                        <li><a href="ghldnjsrkdlq.html">회원가입</a></li>
+                        <li><a href="">아이디/<br>
+                                        비밀번호찾기</a></li>
+                        <li><a href="">학생설문조사사</a></li>
+                    </ul>
+                </li>
+                <li><a href="">상담센터</a>
+                    <ul>
+                        <li><a href="">온라인 상담</a></li>
+                        <li><a href="">국비대상자 간편조회</a></li>
+                        <li><a href="">방문상담 예약</a></li>
+                        <li><a href="">온라인 수강신청</a></li>
+                        <li><a href="">FAQ</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+        <div id="section">
+            <button id="btn1" onclick="clickLeft()" class="button"></button>
+            <button id="btn2" onclick="clickRight()" class="button"></button>
+            <script>
+                let images = [
+                    "url(./0210실습용이미지모음/banner1.PNG)",
+                    "url(./0210실습용이미지모음/banner2.PNG)",
+                    "url(./0210실습용이미지모음/banner3.PNG)"
+                ];
+                let currentIndex = 0;
+                function clickLeft(){
+                    let section = document.getElementById('section');
+                    console.log(currentIndex);
+                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                    console.log(currentIndex);
+                    section.style.backgroundImage = images[currentIndex];
+                    console.log(currentIndex);
+                }
+                function clickRight(){
+                    let section = document.getElementById('section');
+
+                    currentIndex = (currentIndex + 1 + images.length) % images.length;
+                    section.style.backgroundImage = images[currentIndex];
+                }
+            </script>  
+        </div>
+        <div id="midnav">
+            <ul>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                
+            </ul>
+
+        </div>
+        
+            
+            
+        <div id="midheader">
+            <button id="midheaderbtn">개강일정 전체보기 ></button>
+            
+            <div id="midheader_1">
+
+                <h1><b>교육과정<br></b></h1>
+            </div>
+            
+            
+            <div id="midheader_2">
+                <p>KH정보교육원만의 독보적인 커리큘럼을 만나보세요.</p>
+            </div>
+            
+        </div>
+        <div id="content">
+            <div id="content_1"></div>
+            <div id="content_2">
+                <div id="content_2-1"></div>
+                <div id="content_2-2"></div>
+            </div>
+            <div id="content_3">
+                <div id="content_3-1"></div>
+                <div id="content_3-2"></div>
+            </div>
+            <div id="content_4">
+                <div id="content_4-1"></div>
+                <div id="content_4-2"></div>
+            </div>
+
+        
+        </div>
+        <div id="midsection">
+
+            <button id="midbtn1" onclick="midbtn1()" style="opacity: 1;"></button>
+            <button id="midbtn2" onclick="midbtn2()"></button>
+            <button id="midbtn3" onclick="midbtn3()"></button>
+            
+
+            <script>
+                function midbtn1(){
+                    let midbtn1 = document.getElementById("midsection");
+                    midbtn1.style.backgroundImage = "url(./0210실습용이미지모음/midsection1.PNG)";
+                    
+                    let btn1= document.getElementById("midbtn1");
+                    btn1.style.opacity = "1";
+                    let btn2= document.getElementById("midbtn2");
+                    btn2.style.opacity = "0.3";
+                    let btn3= document.getElementById("midbtn3");
+                    btn3.style.opacity = "0.3";
+                }
+                function midbtn2(){
+                    let midbtn2 = document.getElementById("midsection");
+                    midbtn2.style.backgroundImage = "url(./0210실습용이미지모음/midsection2.PNG)";
+                
+                   
+                    let btn1= document.getElementById("midbtn1");
+                    btn1.style.opacity = "0.3";
+                    let btn2= document.getElementById("midbtn2");
+                    btn2.style.opacity = "1";
+                    let btn3= document.getElementById("midbtn3");
+                    btn3.style.opacity = "0.3";
+                }
+                function midbtn3(){
+                    let midbtn3 = document.getElementById("midsection");
+                    midbtn3.style.backgroundImage = "url(./0210실습용이미지모음/midsection3.PNG)";
+               
+                    let btn1= document.getElementById("midbtn1");
+                    btn1.style.opacity = "0.3";
+                    let btn2= document.getElementById("midbtn2");
+                    btn2.style.opacity = "0.3";
+                    let btn3= document.getElementById("midbtn3");
+                    btn3.style.opacity = "1";
+                }
+            </script>
+
+
+        </div>
+
+        <div id="middsection">
+            <button id="middsectionbtn">개강일정 전체보기 ></button>
+            
+            <div id="middsection_1">
+
+                <h1><b>포트폴리오<br></b></h1>
+            </div>
+            
+            
+            <div id="middsection_2">
+                <p>KH정보교육원에서 진행된 프로젝트를 보실 수 있습니다.</p>
+            </div>
+            
+            
+
+        </div>
+        <div id="midcontent">
+            <div id="midcontent_1">
+                <div id="midcontent_1-1">
+                    <div></div>
+                    <div>
+                    <h6>반려동물 통합 포탈<br></h6>
+                    <p>개발자 양성과정</p>
+                    </div>
+                </div>
+                <div id="midcontent_1-2">
+                    <div></div>
+                    <div>
+                    <h6>SNS 계정정보 유출방지 솔루션<br></h6>
+                    <p>정보보안 전문가가</p>
+                    </div>
+                </div>
+            </div>
+            <div id="midcontent_2">
+                <div id="midcontent_2-1">
+                    <div></div>
+                    <div>
+                    <h6>사내 그룹웨어 시스템<br></h6>
+                    <p>개발자 양성과정</p>
+                    </div>
+                </div>
+                <div id="midcontent_2-2">
+                    <div></div>
+                    <div>
+                    <h6>게임 홈페이지 서버 구축 및 안정화<br></h6>
+                    <p>정보보안 전문가</p>
+                    </div>
+                </div>
+            </div>
+            <div id="midcontent_3">
+                <div id="midcontent_3-1">
+                    <div></div>
+                    <div>
+                    <h6>온라인 스터디 활동 포탈<br></h6>
+                    <p>개발자 양성 과정</p>
+                    </div>
+                </div>
+                <div id="midcontent_3-2">
+                    <div></div>
+                    <div>
+                    <h6>기업 보안 인프라망 구축<br></h6>
+                    <p>정보보안 전문가</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="midddsection">
+            <button id="middsectionbtn">KH소식 전체보기></button>
+            
+            <div id="middsection_1">
+
+                <h1><b>KH 새로운 소식<br></b></h1>
+            </div>
+            
+            
+            <div id="middsection_2">
+                <p>KH의 모든 이야기를 담았습니다.</p>
+            </div>
+        </div>
+        <div id="midddcontent">
+            <div id="midddcontent_1">
+                <div id="midddcontent_1-1">
+                    <div></div>
+                    <div>
+                    <p style="color: blue;"><b><small>KH SEMINAR</small></b></p>
+                    <p><b>sm2024 IT<br>취업트렌드 세미나3</b></p>
+                    <p><small>2024년 11월 7일</small></p>
+                    </div>
+                </div>
+                
+            </div>
+            <div id="midddcontent_2">
+                <div id="midddcontent_2-1">
+                    <div></div>
+                    <div>
+                    <p style="color: blue;"><b><small>KH SEMINAR</small></b></p>
+                    <p><b>sm2024 IT<br>취업트렌드 세미나2</b></p>
+                    <p><small>2024년 10월 10일</small></p>
+                    </div>
+                </div>
+                
+            </div>
+            <div id="midddcontent_3">
+                <div id="midddcontent_3-1">
+                    <div></div>
+                    <div>
+                    <p style="color: blue;"><b><small>KH EVENT</small></b></p>
+                    <p><b>추서갖이 KH만의<br>특별한 이벤트!</b></p>
+                    <p><small>2024년 9월 13일</small></p>
+                    </div>
+                </div>
+                
+            </div>
+            <div id="midddcontent_4">
+                <div id="midddcontent_4-1">
+                    <div></div>
+                    <div>
+                    <p style="color: blue;"><b><small>KH SEMINAR</small></b></p>
+                    <p><b>sm2024 IT<br>취업트렌드 세미나1</b></p>
+                    <p><small>2024년 9월 10일</small></p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div id="footer">
+            <div id="footer_1">
+                <div>
+                    <a href="">이용약관&nbsp;&nbsp;&nbsp;|</a> 
+                    <a href="">개인정보처리방침&nbsp;&nbsp;&nbsp;|</a> 
+                    <a href="">인재 채용 문의&nbsp;&nbsp;&nbsp;|</a>
+                    <a href="">훈련비 게시&nbsp;&nbsp;&nbsp;|</a>
+                    <a href="">강사 구인&nbsp;&nbsp;&nbsp;|</a>
+
+                    <button id="fbtn"><a href="" target="_top">위로가기</a></button>
+                </div>
+            </div>
+            <div id="footer_2">
+                <p>KH정보교육원 ｜ 사업자등록번호 : 487-86-00763 ｜ 사업자등록번호 : 851-87-00622 ｜ 서울 강남 제2014-01호 ｜ 대표자 : 양진선 ｜ 책임자 : 최홍석 ｜  개인정보관리책임자 : 양진선</p>
+                <p>
+                    강남지원 1관 : 서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F <br>
+                    강남지원 2관 : 서울특별시 강남구 테헤란로10길 9 그랑프리 빌딩 4F, 5F, 7F <br>
+                    강남지원 3관 : 서울특별시 강남구 테헤란로 130 호산빌딩 5F, 6F <br>
+                    종로점 : 서울특별시 중구 남대문로 120 그레이츠 청계(구 대일빌딩) 2F, 3F <br>
+                    당산점 : 서울특별시 영등포구 선유동2로 57 이레빌딩(구관) 19F, 20F <br>
+                    논현점 : 서울특별시 강남구 논현로 132길 9 마루빌딩 1F, 2F, 3F <br>
+                    부산점 : 부산 부산진구 중앙대로 627 삼비빌딩 2F, 12F <br>
+                </p>
+                <p>Copyright © 1998-2025 KH Information Educational Institute All Right Reserved</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="fixed-area">
+        <div>
+            <h3>1544</h3>
+            <h3>9970</h3>
+            <h5>대표문의</h5>
+            <h5>(연중무휴)</h5>
+        </div>
+        <div>
+            <div></div>
+            <div>개강일정</div>
+        </div>
+        <div>
+            <div></div>
+            <div>
+                <p>국비대상자</p>
+                <p>간편조회</p>
+            </div>
+        </div>
+        <div>
+            <div></div>
+            <div>온라인 상담</div>
+        </div>
+        <div>
+            <div></div>
+            <div>오시는길</div>
+        </div>
+        <div>
+            <div></div>
+            <div>카톡상담</div>
+        </div>
+        
+    </div>
+</body>
+</html>

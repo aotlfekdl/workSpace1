@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>세부_헤더만들기</title>
+    <style>
+        
+
+    </style>
+    <link rel="stylesheet" href="ghldnjsrkdlq.css">
+</head>
+<body>
+    <div class="wrap">
+        <div id="topbar">
+            <div id="topsection">
+                <ul>
+                    <li><a href="">IT</a></li>
+                    <li><a href="">게임</a></li>
+                    <li><a href="">영상</a></li>
+                </ul>
+
+            </div>
+        </div>
+        <div id="header">
+            <div id="header_1">
+                <div id="header_1-1"></div>
+                <div id="header_1-2">
+                    <div id="header_1-2-1">
+                        <h3><b>1544-9970</b></h3>
+                    </div>
+                    <div id="header_1-2-2">
+                        <p>전국대표문의전화(연중무휴)</p>
+                    </div>
+                </div>
+            </div>
+            <div id="header_2" ><a href="index.html" target="_blank"><img src="./0210실습용이미지모음/wjdqhrydbrdnjs.PNG" alt=""></a></div>
+            <div id="header_3">
+            </div>
+        </div>
+        <div id="navigator">
+            <ul>
+                <li><a href="">국비지원과정</a>
+                <ul>
+                    <li><a href="">개발자 양성과정</a></li>
+                    <li><a href="">정보보안 전문가</a></li>
+                    <li><a href="">K-디지털 기초역량훈련</a></li>
+                    <li><a href="">K-디지털 트레이닝</a></li>
+                    <li><a href="">개강일정</a></li>
+                    <li><a href="">국비지원이란?</a></li>
+                    <li><a href="">게임 제작사 과정</a></li>
+                    <li><a href="">영상 제작자 과정정</a></li>
+
+
+                </ul>
+                </li>
+                <li><a href="">교육원소개</a>
+                    <ul>
+                        <li><a href="">KH Overview</a></li>
+                        <li><a href="">About KH</a></li>
+                        <li><a href="">걸어온 길</a></li>
+                        <li><a href="">강사소개</a></li>
+                        <li><a href="">상담선생님 소개</a></li>
+                        <li><a href="">사업 제휴 문의</a></li>
+                        <li><a href="">언론보도</a></li>
+                        <li><a href="">시설안내</a></li>
+                        <li><a href="">오시는길</a></li>
+                        <li><a href="">강사 구인인</a></li>
+                    </ul>
+                </li>
+                <li><a href="">취업지원센터</a>
+                    <ul>
+                        <li><a href="">취업 프로세스</a></li>
+                        <li><a href="">학사공지</a></li>
+                        <li><a href="">기업모의면접</a></li>
+                        <li><a href="">기업 초청특강</a></li>
+                        <li><a href="">취업현황</a></li>
+                        <li><a href="">협력기업</a></li>
+                        <li><a href="">인재 채용 문의</a></li>
+                    </ul>
+                </li>
+                <li><a href="">프로젝트</a>
+                    <ul>
+                        <li><a href="">KH 프로젝트</a></li>
+                        <li><a href="">수강생 프로젝트트</a></li>
+                    </ul>
+                </li>
+                <li><a href="">커뮤니티</a>
+                    <ul>
+                        <li><a href="">교육정보</a></li>
+                        <li><a href="">수강생 인터뷰</a></li>
+                        <li><a href="">수강후기</a></li>
+                        <li><a href="">KH 채널 ON</a></li>
+                    </ul>
+                </li>
+                <li><a href="">산학연계</a>
+                    <ul>
+                        <li><a href="">기술자문의원</a></li>
+                        <li><a href="">실무자 인터뷰</a></li>
+                        <li><a href="">산학협력</a></li>
+                        <li><a href="">IT특강강</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="">마이페이지</a>
+                    <ul>
+                        
+                        <li><a href="loginpage.html">로그인</a></li>
+                        <li><a href="">아이디/<br>
+                                        비밀번호찾기</a></li>
+                        <li><a href="">학생설문조사사</a></li>
+                    </ul>
+                </li>
+                <li><a href="">상담센터</a>
+                    <ul>
+                        <li><a href="">온라인 상담</a></li>
+                        <li><a href="">국비대상자 간편조회</a></li>
+                        <li><a href="">방문상담 예약</a></li>
+                        <li><a href="">온라인 수강신청</a></li>
+                        <li><a href="">FAQ</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+        <div id="section">
+            <div id="insection">
+                <form action="" id="join-form">
+                    
+                       
+                        <p>아이디</p> 
+                        <input type="text" id="user-id" data-name="아이디" onkeyup="checkId(this)"> <span id="id-review"></span><br>
+                        <p>비밀번호</p> <input type="text" id="user-pwd" data-name="비밀번호"> <br>
+                        <p>비밀번호 확인</p><input type="text" id="check-pwd" onblur="checkPwd()"> <span id="pwd-review"></span> <br>
+                        <p>이름</p><input type="text" data-name="이름"> <br>
+                        <p>생년월일</p><input type="date" data-name="생년월일" id="user-date">
+                        <input type="submit" onclick="return validate();" value="회원가입">
+                    
+                </form>
+
+                <script>
+                    function validate(){
+                        //전체 input입력여부 체크
+                        const inputList = document.querySelectorAll("#join-form input");
+                        for(let input of inputList){
+                            if(input.dataset.name && (input.value.trim() === "")){
+                                alert(input.dataset.name + "은 필수입니다.");
+                                return false;
+                            }
+                        } 
+            
+                        if(!checkId(document.getElementById('user-id'))){
+                            alert("사용할 수 없는 ID입니다.")
+                            return false;
+                        }
+            
+                        if(!checkPwd()) {
+                            alert("비밀번호를 확인해주세요.")
+                            return false;
+                        }
+                    }
+                    function checkId(_this){
+                        console.log(_this.value)
+                        /*
+                        ‘user01’이라는 아이디만 저장되어 있다는 설정으로 두고
+                        ‘user01’이 아니라면 아이디 필드 옆에 ‘사용 가능한 아이디입니다.’가 초록 글자로 뜨며
+                        ‘user01’이면 ‘이미 존재하는 아이디입니다.’가 빨간 글자로 뜸
+                        */
+            
+                        const id = _this.value; //사용자가 입력한 값
+                        const idCheckView = document.querySelector('#id-review');
+                        if(id.trim() === "user01"){
+                            idCheckView.innerHTML = "이미 존재하는 아이디입니다.";//빨강
+                            idCheckView.className = 'none-pass';
+                            return false;
+                        }else {
+                            idCheckView.innerHTML = "사용 가능한 아이디입니다."; //초록
+                            idCheckView.className = 'pass';
+                            return true;
+                        }
+                    }
+            
+                    function checkPwd(){
+                        /*
+                            비밀번호와 비밀번호 확인값을 비교
+                            비교결과가 같으면 초록글자, 다르면 빨간글자
+                        */
+            
+                        const userPwd = document.getElementById('user-pwd').value;
+                        const checkPwd = document.getElementById('check-pwd').value;
+                        const pwdCheckView = document.querySelector('#pwd-review');
+            
+                        if(userPwd !== checkPwd){
+                            pwdCheckView.innerHTML = "비밀번호가 일치하지 않습니다.";//빨강
+                            pwdCheckView.className = 'none-pass';
+                            return false;
+                        }else {
+                            pwdCheckView.innerHTML = "비밀번호가 일치합니다."; //초록
+                            pwdCheckView.className = 'pass';
+                            return true;
+                        }
+                    }
+                </script>
+                
+
+            </div>
+            
+ 
+        </div>
+        
+        
+            
+            
+        <div id="midheader">
+          
+        </div>
+        <div id="footer">
+            <div id="footer_1">
+                <div>
+                    <a href="">이용약관</a> 
+                    <a href="">개인정보처리방침</a> 
+                    <a href="">인재 채용 문의</a>
+                    <a href="">훈련비 게시</a>
+                    <a href="">강사 구인</a>
+                </div>
+            </div>
+            <div id="footer_2">
+                <p>KH정보교육원 ｜ 사업자등록번호 : 487-86-00763 ｜ 사업자등록번호 : 851-87-00622 ｜ 서울 강남 제2014-01호 ｜ 대표자 : 양진선 ｜ 책임자 : 최홍석 ｜  개인정보관리책임자 : 양진선</p>
+                <p>
+                    강남지원 1관 : 서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F <br>
+                    강남지원 2관 : 서울특별시 강남구 테헤란로10길 9 그랑프리 빌딩 4F, 5F, 7F <br>
+                    강남지원 3관 : 서울특별시 강남구 테헤란로 130 호산빌딩 5F, 6F <br>
+                    종로점 : 서울특별시 중구 남대문로 120 그레이츠 청계(구 대일빌딩) 2F, 3F <br>
+                    당산점 : 서울특별시 영등포구 선유동2로 57 이레빌딩(구관) 19F, 20F <br>
+                    논현점 : 서울특별시 강남구 논현로 132길 9 마루빌딩 1F, 2F, 3F <br>
+                    부산점 : 부산 부산진구 중앙대로 627 삼비빌딩 2F, 12F <br>
+                </p>
+                <p>Copyright © 1998-2025 KH Information Educational Institute All Right Reserved</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

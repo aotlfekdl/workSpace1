@@ -1,0 +1,39 @@
+package a.basic;
+
+public class Conversion {
+	public static void main(String[] args) {
+		/*
+		 * 형변환
+		 * 자료형을 다른 자료형으로 변경해주는 것
+		 * 
+		 * 자동형변환
+		 * 두개 이상의 자료형을 연산할 때 하나의자료형으로 일치시켜야 연산이 가능
+		 * -> 데이터 손실이 적은 방향으로 컴파일리가 직접 형변환을 해주는 것 
+		 * 
+		 * 명시적형변환(강제형변환)
+		 * 값의 범위가 큰 자료형을 값의 범위가 작은 자료형으로 변환할 대
+		 * 자동으로 컴파일러가 이를 수행하지 않는다. -> 프로그래머가 직접 진행한다.(데이터 손싱르 감수해야하기 때문에)
+		 * 
+		 * */
+	
+		double pi = 3.1415;
+		int number = (int)pi;
+		System.out.print(pi);
+		
+		char a= 'a';
+		System.out.println("1 : "  + a);
+		System.out.println("1 : "  + (a+1)); // char 였던 a가 int인 1을 만나 바이트가 더 큰 int로 자동형변환이 일어남
+		System.out.println("1 : "  + (char)(a+1)); // char 였던 a가 int인 1을 만나 바이트가 더 큰 int로 자동형변환이 일어남
+		System.out.println("1 : "  + (char)(98)); // char 였던 a가 int인 1을 만나 바이트가 더 큰 int로 자동형변환이 일어남
+		
+		long num1 = 30000;
+		int num2 = (int)num1;
+		System.out.println(num2);
+		long num3 = 300000000007L;
+		int num4 = (int)num3;
+		System.out.println(num4
+				);
+	}
+	
+
+}

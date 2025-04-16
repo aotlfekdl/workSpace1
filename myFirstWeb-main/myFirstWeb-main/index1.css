@@ -1,0 +1,1063 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+
+  
+    font-family: 고딕체;
+    font-optical-sizing: auto ;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;  
+    
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+ol,ul,li{
+    list-style: none;
+}
+
+div{
+    box-sizing: border-box;
+
+}
+
+a{
+    text-decoration: none;
+}
+/* 화면 전체를 감싸는 div */
+.wrap{
+    width: 100%;
+    height: 4000px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.wrap>div{
+    width: 100%;
+}
+
+#topbar{height: 30px;}
+#topbar>div{
+    background: black;
+    height: 100%;
+    color: white;
+}
+#topbar>div>ul>li a{
+    color: white;
+    text-decoration: none;
+}
+#midnav{
+    border: 1px solid rgb(180, 180, 192);
+}
+
+
+
+
+
+/*      topsection*/
+
+#topsection ul{
+    display: flex;
+    gap: 5px;
+    padding-left: 5%;
+    padding-top: 4px;
+}
+#header{height: 3%;}
+#navigator{height: 2%;}
+#section{height: 7%;}
+#midnav{height: 3%;}
+#midheader{height: 5%;}
+#middsection{height: 5%;}
+#midddcontent{height: 9%;}
+#midddsection{height: 5%;}
+#footer{height: 7%;}
+
+#content{height: 13%;}
+#midcontent{
+    height: 13%;
+    width: 100%;
+
+   
+}
+
+#header>div, #content>div,#midcontent>div,#midddcontent>div, #aside>div{
+    height: 100%;
+    float: left;
+}
+/*20, 65, 15*/
+#header_1{width: 30%;}
+
+/*여기서 header_1~2 비율 30%70%나누기*/
+#header_1>div{
+    
+    float: left;
+}
+
+#header_1>div:nth-child(1){
+    height: 100%;
+    width: 30%;
+    font-weight: 900;
+}
+
+#header_1-2-1{
+    margin: 0 auto;
+    padding-top: 10%;
+    text-align: center;
+
+}
+
+#header_1>div:nth-child(2){
+    height: 100%;
+    width: 70%;
+    font-weight: 400;
+    justify-content: center;
+}
+
+
+
+#header_1-2>div{
+    width: 100%;
+    height: 50%;
+    
+}
+#header_1-1{
+    background-image: url(./0210실습용이미지모음/rightquick07.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:  60% 60%;
+    cursor: pointer;
+    outline: 0;
+}
+
+#header_2{width: 40%;}
+#header_2{
+    background-image: url(./0210실습용이미지모음/wjdqhrydbrdnjs.PNG);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:  40% 40%;
+    cursor: pointer;
+    outline: 0;
+    
+}
+#header_2:hover{
+    
+}
+#header_3{
+    width: 30%;
+    background-image: url(./0210실습용이미지모음/dnlclcckwrl.PNG);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:  50% 60%;
+    cursor: pointer;
+    outline: 0;
+}
+
+/*       nav*/
+
+#navigator ul{
+    border: 1px solid rgb(180, 180, 192);
+}
+#navigator>ul{
+    border: 1px solid rgb(180, 180, 192);
+    
+}
+#navigator>ul>li a{
+    color: black;
+    
+}
+#navigator li a{
+    color: gray;
+    font-weight: bold;
+    
+}
+#navigator>ul{
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    
+}
+
+#navigator>ul>li{
+    flex: 1;
+    position: relative;
+}
+#navigator>ul>li ul{
+    
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    width: 100%;
+    background-color: white;
+    
+    opacity: 0.7;
+    
+    width: calc(100%-20px);
+    padding: 10px 0;
+    display: none;
+}
+
+#navigator>ul li a:hover+ul{
+    display: block;
+}
+#navigator>ul li ul:hover{
+    display: block;
+}
+
+/*    section*/
+#section{
+    background-color: #070d30;
+     background-image: url(./0210실습용이미지모음/banner1.PNG);
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:  80% 100%;
+    cursor: pointer;
+    outline: 0;
+}  
+#section{
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#section>#btn1{
+    margin-left: 10%;
+    background-image: url(./0210실습용이미지모음/left.PNG);
+    width: 50px;
+    height: 50px;
+    opacity: 0.2;
+}
+#section>#btn2{
+    margin-right: 10%;
+    background-image: url(./0210실습용이미지모음/right.PNG);
+    width: 50px;
+    height: 50px;
+    opacity: 0.2;
+}
+#section{
+    width: 100%;
+    
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+/*    midnav     */
+#midnav>ul{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding-left: 10%;
+    
+}
+#midnav>ul>div:nth-child(1){
+    height: 100%;
+    width: 17%;
+    background-image: url(./0210실습용이미지모음/midnav1.PNG);
+    background-position: center;
+    background-size: 50% 50%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+
+#midnav>ul>div:nth-child(2){
+    height: 100%;
+    width: 17%;
+    background-image: url(./0210실습용이미지모음/midnav2.PNG);
+    background-position: center;
+    background-size: 90% 50%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+#midnav>ul>div:nth-child(3){
+    height: 100%;
+    width: 17%;
+    background-image: url(./0210실습용이미지모음/midnav3.PNG);
+    background-position: center;
+    background-size: 50% 50%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+#midnav>ul>div:nth-child(4){
+    height: 100%;
+    width: 17%;
+    background-image: url(./0210실습용이미지모음/midnav4.PNG);
+    background-position: center;
+    background-size: 60% 50%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+#midnav>ul>div:nth-child(5){
+    height: 100%;
+    width: 25%;
+    background-image: url(./0210실습용이미지모음/midnav5.PNG);
+    background-position: center;
+    background-size: 100% 50%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+
+/*    midheader    */
+#midheader>div:nth-child(2){
+    
+    width: 100%;
+    height: 60%;
+    font-weight: 900;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding-bottom: 10px;
+
+}
+#midheader>div:nth-child(3){
+    width: 100%;
+    height: 40%;
+    display: flex;
+    font-size: 13px;
+    justify-content: center;
+    padding-top: 5px;
+
+}
+
+
+#midheader{ 
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#midheader>button{
+   
+    display: flex;
+    width: 150px;
+    height: 50px;
+    font-size: 13px;
+    align-items: center;
+    justify-content: center;
+    color: blue;
+    
+}
+
+#midheaderbtn{
+    display: flex;
+    position: absolute;
+    right: 10%;
+    bottom: 40%;
+  
+    
+   
+}
+
+
+/*    content    */
+#content>div{
+    border: 1px solid gray;
+    
+
+    
+
+}
+#content_1{
+    width: 25%;
+    background-image: url(./0210실습용이미지모음/content1.PNG);
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+    
+   
+}
+#content_2{
+    width: 25%;
+    
+}
+#content_2>div{
+    height: 47%;
+    border: 1px solid gray;
+    margin: 10px;
+}
+#content_2-1{
+
+    
+    background-image: url(./0210실습용이미지모음/content2-1.PNG);
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+
+}
+#content_2-2{
+
+    
+    background-image: url(./0210실습용이미지모음/content2-2.PNG);
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+ 
+}
+#content_3{width: 25%;}
+#content_3>div{
+    height: 47%;
+    border: 1px solid gray;
+    margin: 10px;
+}
+#content_3-1{
+    background-image: url(./0210실습용이미지모음/content3-1.PNG);
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;  
+}
+#content_3-2{
+    background-image: url(./0210실습용이미지모음/content3-2.PNG);
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;   
+}
+#content_4{width: 25%;}
+#content_4>div{
+    height: 47%;
+    border: 1px solid gray;
+    margin: 10px;
+}
+#content_4-1{
+    background-image: url(./0210실습용이미지모음/content4-1.PNG);
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+#content_4-2{
+    background-image: url(./0210실습용이미지모음/content4-2.PNG);
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+
+#midsection{
+    height: 7%;}
+
+
+
+
+/*    midsection    */
+#midsection{
+    background-image: url(./0210실습용이미지모음/midsection1.PNG);
+    
+     
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+
+#midsection>button:nth-child(1){
+    background-image: url(./0210실습용이미지모음/btn1.png);
+    
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+#midsection>button:nth-child(2){
+    background-image: url(./0210실습용이미지모음/btn2.png);
+    
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}#midsection>button:nth-child(3){
+    background-image: url(./0210실습용이미지모음/btn3.png);
+    
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+#midsection{
+    
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 4%;
+    gap: 10px;
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+
+}
+#midsection>button{
+    width: 120px;
+    height: 40px;
+    opacity: 0.1;
+    background-color: transparent;
+    border: none; 
+}
+
+/*    middsection*/
+#middsection>div:nth-child(2){
+    
+    width: 100%;
+    height: 60%;
+    font-weight: 900;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding-bottom: 10px;
+
+}
+#middsection>div:nth-child(3){
+    width: 100%;
+    height: 40%;
+    display: flex;
+    font-size: 13px;
+    justify-content: center;
+    padding-top: 5px;
+
+}
+
+
+#middsection{ 
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#middsection>button{
+   
+    display: flex;
+    width: 150px;
+    height: 50px;
+    font-size: 13px;
+    align-items: center;
+    justify-content: center;
+    color: blue;
+    
+}
+
+#middsectionbtn{
+    display: flex;
+    position: absolute;
+    right: 10%;
+    bottom: 40%; 
+}
+/*    midcontent    */
+
+#midcontent_1,#midcontent_2,#midcontent_3{width: 33%;}
+#midcontent{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#midcontent_1>div{
+    height: 47%;
+    margin: 10px;
+    border: 1px solid gray;
+}
+
+#midcontent_1-1>div:nth-child(1){
+    width: 100%;
+    height: 70%;
+    background-image: url(./0210실습용이미지모음/midcontent1-1.png);
+    
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+#midcontent_1-1>div:nth-child(2){
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+   
+    justify-content: center;
+
+}
+#midcontent_1-2>div:nth-child(1){
+    width: 100%;
+    height: 70%;
+    background-image: url(./0210실습용이미지모음/midcontent1-2.png);
+    
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+#midcontent_1-2>div:nth-child(2){
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+   
+    justify-content: center;
+
+}
+
+
+#midcontent_2>div{
+    height: 47%;
+    margin: 10px;
+    border: 1px solid gray;
+}
+
+#midcontent_2-1>div:nth-child(1){
+    width: 100%;
+    height: 70%;
+    background-image: url(./0210실습용이미지모음/midcontent2-1.png);
+    
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+#midcontent_2-1>div:nth-child(2){
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+   
+    justify-content: center;
+
+}
+
+#midcontent_2-2>div:nth-child(1){
+    width: 100%;
+    height: 70%;
+    background-image: url(./0210실습용이미지모음/midcontent2-2.png);
+    
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+#midcontent_2-2>div:nth-child(2){
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+   
+    justify-content: center;
+
+}
+
+
+#midcontent_3>div{
+    height: 47%;
+    margin: 10px;
+    border: 1px solid gray;
+}
+#midcontent_3-1>div:nth-child(1){
+    width: 100%;
+    height: 70%;
+    background-image: url(./0210실습용이미지모음/midcontent3-1.png);
+    
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+#midcontent_3-1>div:nth-child(2){
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+   
+    justify-content: center;
+
+}
+#midcontent_3-2>div:nth-child(1){
+    width: 100%;
+    height: 70%;
+    background-image: url(./0210실습용이미지모음/midcontent3-2.png);
+    
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+#midcontent_3-2>div:nth-child(2){
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+   
+    justify-content: center;
+
+}
+
+/*    midddsection    */
+
+#midddsection>div:nth-child(2){
+    
+    width: 100%;
+    height: 60%;
+    font-weight: 900;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding-bottom: 10px;
+
+}
+#midddsection>div:nth-child(3){
+    width: 100%;
+    height: 40%;
+    display: flex;
+    font-size: 13px;
+    justify-content: center;
+    padding-top: 5px;
+
+}
+
+
+#midddsection{ 
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#midddsection>button{
+   
+    display: flex;
+    width: 150px;
+    height: 50px;
+    font-size: 13px;
+    align-items: center;
+    justify-content: center;
+    color: blue;
+    
+}
+
+#midddsectionbtn{
+    display: flex;
+    position: absolute;
+    right: 10%;
+    bottom: 40%; 
+}
+
+/*    midddcontent    */
+
+#midddcontent_1,#midddcontent_2,#midddcontent_3, #midddcontent_4{width: 25%;}
+#midddcontent{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+#midddcontent_1>div{
+    height: 95%;
+    margin: 10px;
+    border: 1px solid gray;
+}
+
+#midddcontent_1-1>div:nth-child(1){
+    width: 100%;
+    height: 60%;
+    background-image: url(./0210실습용이미지모음/midddcontent1.png);
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+#midddcontent_1-1>div:nth-child(2){
+    display: flex;
+    flex-direction: column; 
+    align-items:flex-start; 
+    justify-content: space-around; 
+    text-align: left; 
+    height: 40%;
+    padding: 10px; 
+}
+
+#midddcontent_2>div{
+    height: 95%;
+    margin: 10px;
+    border: 1px solid gray;
+}
+
+#midddcontent_2-1>div:nth-child(1){
+    width: 100%;
+    height: 60%;
+    background-image: url(./0210실습용이미지모음/midddcontent2.png);
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+#midddcontent_2-1>div:nth-child(2){
+    display: flex;
+    flex-direction: column; 
+    align-items:flex-start; 
+    justify-content: space-around; 
+    text-align: left; 
+    height: 40%;
+    padding: 10px; 
+}
+
+#midddcontent_3>div{
+    height: 95%;
+    margin: 10px;
+    border: 1px solid gray;
+}
+
+#midddcontent_3-1>div:nth-child(1){
+    width: 100%;
+    height: 60%;
+    background-image: url(./0210실습용이미지모음/midddcontent3.png);
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+#midddcontent_3-1>div:nth-child(2){
+    display: flex;
+    flex-direction: column; 
+    align-items:flex-start; 
+    justify-content: space-around; 
+    text-align: left; 
+    height: 40%;
+    padding: 10px; 
+}
+#midddcontent_4>div{
+    height: 95%;
+    margin: 10px;
+    border: 1px solid gray;
+}
+
+#midddcontent_4-1>div:nth-child(1){
+    width: 100%;
+    height: 60%;
+    background-image: url(./0210실습용이미지모음/midddcontent4.png);
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+#midddcontent_4-1>div:nth-child(2){
+    display: flex;
+    flex-direction: column; 
+    align-items:flex-start; 
+    justify-content: space-around; 
+    text-align: left; 
+    height: 40%;
+    padding: 10px; 
+}
+
+/*    footer    */
+
+
+#footer_1{
+    
+    background: whitesmoke;
+    width: 100%;
+    height: 30px;
+    position: relative;
+    border: 1px solid rgb(180, 180, 192);
+}
+#footer_1>div{
+    
+    height: 100%;
+}
+#footer_2{
+    border: 1px solid rgb(180, 180, 192);
+    padding-top: 3%;
+    width: 100%;
+    height: 96%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#footer_1>div>#fbtn{
+    display: flex;
+    position: absolute;
+    right: 8%;
+    height: 100%;
+    top: 5%;
+    
+}
+
+/*     fixed-area    */
+#fixed-area{
+    width: 90px;
+    height: 470px;
+    background: white;
+    border: 1px solid gray;
+    
+    position: fixed; /*브라우저기준*/
+    right: 20px;
+    bottom: 150px;
+}
+#fixed-area>div:nth-child(1){
+    width: 100%;
+    height: 20%;
+    background: #2c5ae9;
+    color: white;
+}
+#fixed-area>div:nth-child(1){
+    text-align: center;
+    padding-top: 8px;
+    text-justify: center;
+}
+#fixed-area>div:nth-child(2){
+    width: 100%;
+    height: 16%;
+}
+
+#fixed-area>div:nth-child(2)>div:nth-child(1){
+    width: 100%;
+    height: 60%;
+    background-image: url(./0210실습용이미지모음/개강일정.png);
+    background-position: center;
+    background-size: 60% 80%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+
+
+#fixed-area>div:nth-child(2)>div:nth-child(2){
+    width: 100%;
+    height: 40%;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#fixed-area>div:nth-child(3){
+    width: 100%;
+    height: 16%;
+}
+#fixed-area>div:nth-child(3)>div:nth-child(1){
+    width: 100%;
+    height: 60%;
+    background-image: url(./0210실습용이미지모음/국비대상자.png);
+    background-position: center;
+    background-size: 60% 80%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+
+
+#fixed-area>div:nth-child(3)>div:nth-child(2){
+    width: 100%;
+    height: 40%;
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#fixed-area>div:nth-child(4){
+    width: 100%;
+    height: 16%;
+}
+#fixed-area>div:nth-child(4)>div:nth-child(1){
+    width: 100%;
+    height: 60%;
+    background-image: url(./0210실습용이미지모음/온라인상담.png);
+    background-position: center;
+    background-size: 60% 80%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+
+
+#fixed-area>div:nth-child(4)>div:nth-child(2){
+    width: 100%;
+    height: 40%;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#fixed-area>div:nth-child(5){
+    width: 100%;
+    height: 16%;
+}
+#fixed-area>div:nth-child(5)>div:nth-child(1){
+    width: 100%;
+    height: 60%;
+    background-image: url(./0210실습용이미지모음/오시는길.png);
+    background-position: center;
+    background-size: 60% 80%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+
+
+#fixed-area>div:nth-child(5)>div:nth-child(2){
+    width: 100%;
+    height: 40%;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#fixed-area>div:nth-child(6){
+    width: 100%;
+    height: 16%;
+}
+#fixed-area>div:nth-child(6)>div:nth-child(1){
+    width: 100%;
+    height: 60%;
+    background-image: url(./0210실습용이미지모음/카톡.png);
+    background-position: center;
+    background-size: 60% 80%;
+    cursor: pointer;
+    outline: 0;
+    background-repeat: no-repeat;
+}
+
+
+#fixed-area>div:nth-child(6)>div:nth-child(2){
+    width: 100%;
+    height: 40%;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Properties File</comment>
+
+<entry key="insertMovie">
+		INSERT INTO MOVIE 
+		VALUES(SEQ_TITLENO.NEXTVAL,?,?,?,?,?)
+	</entry>
+<entry key="selectMovie">
+		SELECT * FROM MOVIE
+	</entry>
+<entry key="updateMovie">
+		UPDATE MOVIE SET AGE =?,
+				 GENRE = ?,
+				 DIRECTOR = ?,
+				 COMPANY = ?
+				 WHERE TITLE = ?
+	</entry>
+<entry key="deleteMovie">
+		DELETE FROM MOVIE WHERE TITLE = ?
+	</entry>
+<entry key="searchMovieTitle">
+		SELECT * FROM MOVIE WHERE TITLE = ?
+	</entry>
+<entry key="selectMemberAll">
+		SELECT * FROM MEMBER
+	</entry>
+<entry key="insertMember">
+		INSERT INTO MEMBER VALUES(SEQ_USERNO.NEXTVAL,?,?,?,?,?,?,?)
+	</entry>
+<entry key="selectMember">
+		SELECT * FROM MEMBER WHERE USERID = ?
+	</entry>
+<entry key="updateMember">
+		UPDATE MEMBER SET USERPWD =?,
+				 				AGE = ?,
+				 				EMAIL = ?, 
+				 				PHONE = ?
+				 				WHERE USERID = ?
+	</entry>
+<entry key="deleteMember">
+		DELETE FROM MEMBER WHERE USERID = ?
+	</entry>
+<entry key="movieSeat">
+		SELECT * FROM SEAT
+	</entry>
+<entry key="movieReservation">
+		UPDATE "+tablename+"SEAT SET USERID = ? ,
+				RESERVATION = ?
+				WHERE SEATROW = ? AND SEATNUMBER = ? AND RESERVATION = ?
+	</entry>
+<entry key="searchuserid">
+		SELECT * FROM MEMBER WHERE USERID = ?
+	</entry>
+</properties>

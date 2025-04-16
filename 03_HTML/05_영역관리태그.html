@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영역관리태그</title>
+
+    <style>
+        div{
+            width : 200px;
+            height : 200px;
+            border : 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        블럭요소 : 한 줄 단위로 영역을 차지함
+                    줄바꿈이 적용되어 이미 존재하는 태그의 다음줄에 다음영역이 잡힘
+                    (p, pre, div....)
+        인라인요소 :contentㄴ(내용)영역에 해당하는 부분만 영역을 차지하는 요소 줄바꿈이 적용되지않아 다른 영역이 바로 옆으로 잡힘
+                    (b, mark. s. imp, "span"...)
+    -->
+    <h3>영역관리태그</h3>
+    <h4>div태그와 span태그의 차이점1 : 줄바꿈처리</h4>
+
+    <div style="background-color: red;">첫번째 영역</div>
+    <div style="background-color: orange;">두번째 영역</div>
+    <div style="background-color: yellow;">세번째 영역</div>
+
+    <h3>span태그</h3>
+    <p>span 태그는 온라인 요소로 content영역만 차지(줄바꿈 발생x)</p>
+
+    <span style="background-color: red;">첫번째 영역</span>
+    <span style="background-color: orange;">두번째 영역</span>
+    <spans style="background-color: yellow;">세번째 영역</spans>
+
+    <h2>div 태그와 span의 차이점2 : 영역지정방식</h2>
+    <h3>div 태그 : 사각형 박스라고 볼 수 있다.</h3>
+    <div style="height: auto;">
+        (서울=연합뉴스) 전재훈 황윤기 기자 = 헌법재판소가 최상목 대통령 권한대행 부총리 겸 기획재정부 장관이 마은혁 재판관 후보자를 임명하지 않는 것이 위헌인지에 관한 권한쟁의·헌법소원 심판의 선고를 연기했다.
+
+    헌재는 우원식 국회의장이 낸 권한쟁의심판의 변론을 재개해 오는 10일 오후 2시에 변론을 열겠다고 3일 오전 11시 57분께 공지했다.
+
+    김정환 변호사(법무법인 도담)가 낸 헌법소원 심판의 선고는 기일을 따로 지정하지 않고 무기한 연기했다.
+        </div>
+
+
+    <h3>span태그 : 문장단위로 영역을 지정</h3>
+    <span style="height: auto;">
+        (서울=연합뉴스) 전재훈 황윤기 기자 = 헌법재판소가 최상목 대통령 권한대행 부총리 겸 기획재정부 장관이 마은혁 재판관 후보자를 임명하지 않는 것이 위헌인지에 관한 권한쟁의·헌법소원 심판의 선고를 연기했다.
+
+    헌재는 우원식 국회의장이 낸 권한쟁의심판의 변론을 재개해 오는 10일 오후 2시에 변론을 열겠다고 3일 오전 11시 57분께 공지했다.
+
+    김정환 변호사(법무법인 도담)가 낸 헌법소원 심판의 선고는 기일을 따로 지정하지 않고 무기한 연기했다.
+    </span>
+
+
+    <br>
+    <h1>iframe</h1>
+    <p>웹문서 안에 다른 홈페이지를 추가하는 태그(인라인 요소)</p>
+    <iframe src="./04_이미지및멀티미디어태그.html" width="300" height="300"></iframe>
+    <iframe width="500" height="315"  frameborder="0"></iframe>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </b>
+
+
+</body>
+</html>

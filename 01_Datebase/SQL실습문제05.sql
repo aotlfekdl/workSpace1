@@ -1,0 +1,101 @@
+--1.과목유형 테이블(BT_CLASS_TYPE)에 아래와 같은 데이터를 입력하시오.
+INSERT INTO TB_CLASS_TYPE VALUES('01','전공필수');
+INSERT INTO TB_CLASS_TYPE VALUES('02','전공선택');
+INSERT INTO TB_CLASS_TYPE VALUES('03','교양필수');
+INSERT INTO TB_CLASS_TYPE VALUES('04','교양선택');
+INSERT INTO TB_CLASS_TYPE VALUES('05','논문지도');
+--==============================================================================
+
+--2. 춘 기술대학교 학생들의 정보가 포함되어 있는 학생 일반 정보 테이블을 만들고자 한다.
+--아래 내용을 참고하여 적절한 SQL문을 작성하시오(서브쿼리를 이용하시오)
+
+CREATE TABLE TB_학생일반정보
+AS (SELECT STUDENT_NO, STUDENT_NAME, STUDENT_ADDRESS
+    FROM TB_STUDENT);
+--==============================================================================
+--3. 국어국문학과 학생들의 정보만이 포함되어 있는 학과정보 테이블을 만들고자 한다.
+--아래 내용을 참고하여 적절한 SQL문을 작성하시오.(힌트: 방법은 다양함, 소신껏 작성하시오)
+CREATE TABLE TB_국어국문학과
+AS (SELECT STUDENT_NO AS "학번", STUDENT_NAME AS "학생이름",
+EXTRACT(YEAR FROM TO_DATE(SUBSTR(STUDENT_SSN,1,6), 'RR/MM/DD')) AS "출생년도",
+PROFESSOR_NAME AS "교수이름"
+FROM TB_STUDENT
+JOIN TB_PROFESSOR USING(DEPARTMENT_NO)
+JOIN TB_DEPARTMENT USING(DEPARTMENT_NO)
+WHERE DEPARTMENT_NAME = '국어국문학과');
+--==============================================================================
+
+;
+SELECT STUDENT_NO AS "학번", STUDENT_NAME AS "학생이름",
+EXTRACT(YEAR FROM TO_DATE(SUBSTR(STUDENT_SSN,1,6), 'RR/MM/DD')) AS "출생년도",
+PROFESSOR_NAME AS "교수이름"
+FROM TB_STUDENT
+JOIN TB_PROFESSOR USING(DEPARTMENT_NO)
+JOIN TB_DEPARTMENT USING(DEPARTMENT_NO)
+WHERE DEPARTMENT_NAME = '국어국문학과';
+
+SELECT STUDENT_NO, STUDENT_NAME, EXTRACT(TO_NUMBER(SUBSTR(STUDENT_SSN,1,6)) 'YY')
+FROM TB_STUDENT;
+
+SELECT STUDENT_NO, STUDENT_NAME, EXTRACT(YEAR FROM TO_DATE(SUBSTR(STUDENT_SSN,1,6))'YY')
+FROM TB_STUDENT;
+
+
+--4. 현 학과들의 정원을 10%증가시키게 되었다. 이에 사용할 SQL문을 작성하시오 (단, 반올림을
+--사용하여 소수점 자릿수는 생기지 않도록 한다.
+UPDATE TB_DEPARTMENT
+SET CAPACITY = CAPACITY+ROUND(CAPACITY *0.1);
+COMMIT;
+--5. 학번 A413042인 박건우 학생의 주소가 "서울시 종로구 숭인동 181-21"로
+--변경되었다고 한다. 주소지를 정정하기 위해 사용할 SQL문을 작성하시오
+UPDATE TB_STUDENT
+SET STUDENT_ADDRESS = '서울시 정로구 숭인동 181-21'
+WHERE STUDENT_NO = 'A413042';
+--==============================================================================
+
+SELECT STUDENT_NO, STUDENT_ADDRESS
+FROM TB_STUDENT;
+
+--6. 주민등록번호 보호법에 따라 학생정보 테이블에서 주민번호 뒷자리를 저장하지 않기로
+--결정하였다. 이 내용을 반영할 적절한 SQL문장을 작성하시오.
+UPDATE TB_STUDENT
+SET STUDENT_SSN = SUBSTR(STUDENT_SSN,1,6);
+--===================================================================================
+
+SELECT SUBSTR(STUDENT_SSN,1,6)
+FROM TB_STUDENT;
+
+--7. 의학과 김명훈 학생은 2005년 1학기에 자신이 수강한 '피부생리학' 점수가 잘못되었다는 것을
+--발견하고는 정정을 요청하였다. 담당 교수의 확인 받은 결과 해당 과목의 학점을 3.5로 변경키로
+--결정되었다. 적절한 SQL문을 작성하시오.
+
+
+SELECT STUDENT_NAME, DEPARTMENT_NAME, CLASS_NO, CLASS_NAME, POINT
+FROM TB_STUDENT
+JOIN TB_DEPARTMENT USING(DEPARTMENT_NO)
+JOIN TB_CLASS USING(DEPARTMENT_NO)
+JOIN TB_GRADE USING(CLASS_NO)
+WHERE STUDENT_NAME = '김명훈' AND DEPARTMENT_NAME = '의학과';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
