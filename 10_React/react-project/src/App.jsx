@@ -32,6 +32,13 @@ import Profile from './pages/Profile'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import About from './pages/About'
+import styled from 'styled-components'
+import CountDisplay from './11_Zustand/CountDisplay'
+import CounterControls from './11_Zustand/CounterControls'
+import TodoList from './11_Zustand/TodoList'
+import HomePage from './12_page/HomePage'
+import PostListPage from './12_page/PostListPage'
+
 
 // const videoData = [{
 //   sumbnail:"https://i.ytimg.com/an_webp/ugR9MOkqK_g/mqdefault_6s.webp?du=3000&sqp=CKi9h8AG&rs=AOn4CLCHATRFJmBeirLG2dsfaKqEhEvgGw",
@@ -49,61 +56,38 @@ import About from './pages/About'
 //   date: "2시간 전",
 // }]
 
+const AppContainer = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+width: 100vw;
+padding: 24px;
+text-align: center;
+transition: all 0.3s;
 
+`
+const Section = styled.section`
+  width: 100%;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 18px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+
+`
 
 function App() {
-  // const [isButton, setIsButton] = useState(true);
-  // const toggleButton = () =>{
-  //   setIsButton(!isButton);
-  // }
   return (
     <>
-      {/* <JavaScript /> */}
-      {/* <Style /> */}
-      {/* <Products/> */}
-      {/* <Heading type="h2"/> */}
-      {/* <Heading> */}
-        {/* 무엇을 도와드릴까요? */}
-      {/* </Heading> */}
-      {/* <Hello/> */}
-     {/* <VideoList videos={videoData}/> */}
-{/* 
-      {isButton && <LifecycleText/>}
-      <button onClick={toggleButton}>count없애기기</button> */}
-      {/* <Comment message={"안녕하세요"} /> */}
-      {/* <SignUpTest /> */}
-    {/* <LandingPageTest /> */}
-    < UseRefScroll/>
-      {/* <UseRefTest /> */}
-      {/* <SignUpTest/> */}
-        {/* <UseMemoTest/> */}
-        {/* <UseCallbackTest /> */}
-        {/* <EffectView> */}
-        {/* <BlackOrWhite/> */}
-        {/* <MyForm/> */}
-        {/* <ToggleBox/> */}
-        {/* <UserProvider>
-        <Header />
-        </UserProvider> */}
-        {/* <BrowserRouter>
-        <nav>
-          Link : a태그와 동일한 역할을 하지만 react-router-dom을 활용해 SPA방식으로 자연스럽게 화면전환
-          <Link to={"/"} style={{margin:12}}>홈</Link>
-          <Link to={"/about"} style={{margin:12}}>소개</Link>
-          <Link to={"/profile/최지원"} style={{margin:12}}>프로필</Link>
-        </nav>
-        <Routes>
-          <Route path='/' element={<Home />}/>
-          <Route path='about/' element={<About />}/>
-          <Route path='profile/:username' element={<Profile />}/>
-          <Route path='*' element={<NotFound />}/>
-        </Routes>
-        </BrowserRouter> */}
+    <Router>
+      <Routes>
+        <Route path='/' elementlement={<HomePage/>}/>
+        <Route path='/postes' elementlement={<PostListPage/>}/>
+      </Routes>
 
-
-
-
-
+    </Router>
     </>
 
   )
