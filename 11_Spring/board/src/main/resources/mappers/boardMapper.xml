@@ -27,4 +27,30 @@
         #{board.memberEmail},
         CURRENT_TIMESTAMP)
     </insert>
+
+
+    <select id="selectBoard" resultType="Board">
+        SELECT TITLE title,
+        CONTENTS contents,
+        FILE_NAME fileName,
+        MEMBER_EMAIL memberEmail
+        FROM BOARD
+        WHERE BOARD_ID = #{boardId}
+    </select>
+
+    <select id="selectNickName" resultType="Member">
+        SELECT NICKNAME
+        FROM MEMBER
+        WHERE EMAIL = #{email}
+    </select>
+
+    <update id="update" parameterType="Board">
+        UPDATE BOARD SET
+        TITLE = #{title},
+        CONTENTS = #{contents},
+        FILE_NAME = #{fileName},
+        UPDATED_AT = CURRENT_TIMESTAMP
+        WHERE BOARD_ID = #{boardId}
+
+    </update>
 </mapper>

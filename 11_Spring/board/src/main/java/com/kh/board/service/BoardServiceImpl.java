@@ -1,6 +1,7 @@
 package com.kh.board.service;
 
 import com.kh.board.controller.dto.request.BoardRequest;
+import com.kh.board.controller.dto.response.BoardResponse;
 import com.kh.board.entity.Board;
 import com.kh.board.entity.Member;
 import com.kh.board.mapper.BoardMapper;
@@ -24,10 +25,23 @@ public class BoardServiceImpl implements BoardService {
         return boardMapper.insertBoard(board, upFile);
     }
 
+    @Override
+    public BoardResponse.DetailDTO  selectBoard(Long boardId) {
+        Board board = boardMapper.selectBoard(boardId);
 
-//    @Override
-//    public List<Board> insertBoard(RequestEntity<List<BoardRequest.SimpleDTO>> requestEntity) {
-//        return List.of();
-//    }
+
+
+        String email = board.getMember().getEmail();
+
+        Member member = boardMapper.selectNickName(email);
+
+        return BoardResponse.DetailDTO.formEntity(board, member.getNickName());
+    }
+
+    @Override
+    public int update(Board board) {
+        return boardMapper.update(board);
+    }
+
 
 }

@@ -21,18 +21,35 @@ public class BoardResponse {
         public static SimpleDTO formEntity(Board board) {
             return SimpleDTO.builder()
                     .board_id(board.getBoardId())
-                    .member_email(board.getMemberEmail())
+                    .member_email(board.getMember().getEmail())
                     .title(board.getTitle())
                     .created_at(board.getCreatedAt())
                     .build();
         }
     }
 
-
+    @Getter
+    @Setter
+    @Builder
     public static class DetailDTO {
+
         private String title;
         private String member_email;
         private String contents;
         private String upFile;
+        private String nickName;
+
+
+
+        public static DetailDTO formEntity(Board board, String nickName) {
+            return DetailDTO.builder()
+
+                    .title(board.getTitle())
+                    .member_email(board.getMember().getEmail())
+                    .contents(board.getContents())
+                    .upFile(board.getFileName())
+                    .nickName(nickName)
+                    .build();
+        }
     }
 }

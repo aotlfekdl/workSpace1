@@ -1,6 +1,7 @@
 package com.kh.board.service;
 
 import com.kh.board.controller.dto.request.BoardRequest;
+import com.kh.board.controller.dto.response.BoardResponse;
 import com.kh.board.entity.Board;
 import com.kh.board.entity.Member;
 import org.springframework.http.RequestEntity;
@@ -14,4 +15,10 @@ public interface BoardService {
 
     int insertBoard(Board board, String upFile);
 //    List<Board> insertBoard(RequestEntity<List<BoardRequest.SimpleDTO>> requestEntity);
+
+    BoardResponse.DetailDTO selectBoard(Long boardId);
+
+    int update(Board board);
+
+
 }

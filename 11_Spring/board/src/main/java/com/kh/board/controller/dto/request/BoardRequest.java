@@ -2,6 +2,7 @@ package com.kh.board.controller.dto.request;
 
 
 import com.kh.board.entity.Board;
+import com.kh.board.entity.Member;
 import lombok.*;
 
 import javax.swing.*;
@@ -21,15 +22,33 @@ public class BoardRequest {
         private String contents;
         private String userId;
 
-
-
-
-
-        public Board toEntity() {
+        public Board toEntity(Member member) {
             return Board.builder()
                     .title(this.getTitle())
                     .contents(this.getContents())
-                    .memberEmail(this.getUserId())
+                    .member(member)
+                    .build();
+        }
+    }
+
+    @Setter
+    @Getter
+    public static class updateDTO{
+        private Long boardId;
+        private String title;
+        private String contents;
+        private String user_id;
+        private String origin_file;
+
+
+
+        public Board toEntity(Member member) {
+            return Board.builder()
+                    .boardId(boardId)
+//                    .memberEmail(user_id)
+                    .title(title)
+                    .contents(contents)
+                    .fileName(origin_file)
                     .build();
         }
     }
