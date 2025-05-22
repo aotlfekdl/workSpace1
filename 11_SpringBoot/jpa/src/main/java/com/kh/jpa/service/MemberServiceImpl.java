@@ -64,4 +64,13 @@ public class MemberServiceImpl implements MemberService {
     public List<MemberDto.Response> findByName(String name) {
         return memberRepository.findByName(name).stream().map(MemberDto.Response::toDto).collect(Collectors.toList());
     }
+
+    @Override
+    public void isDeletedMember(String userId) {
+        Member member = memberRepository.findOne(userId)
+                .orElseThrow(() -> new RuntimeException("존재하지 않는 회원입니다."));
+
+        memberRepository.isDeleted(member);
+
+    }
 }

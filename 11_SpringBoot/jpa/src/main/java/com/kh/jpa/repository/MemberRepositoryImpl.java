@@ -38,4 +38,14 @@ public class MemberRepositoryImpl implements MemberRepository {
         String query = "select m from Member m where m.userName LIKE :username";
         return em.createQuery(query, Member.class).setParameter("username", "%"+name+"%").getResultList();
     }
+
+    @Override
+    public void isDeleted(Member member) {
+        String query = "update Member m set m.isDeleted='Y' where m.userId = :userId";
+
+        em.createQuery(query)
+                .setParameter("userId", member.getUserId())
+                .executeUpdate();
+
+    }
 }

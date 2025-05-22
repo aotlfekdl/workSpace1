@@ -11,4 +11,5 @@ public interface MemberService {
     void deleteMember(String userId);
     List<MemberDto.Response> findAllMember();
     List<MemberDto.Response> findByName(String name);
+    void isDeletedMember(String userId);
 }

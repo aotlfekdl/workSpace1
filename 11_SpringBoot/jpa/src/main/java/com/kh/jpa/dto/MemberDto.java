@@ -81,6 +81,13 @@ public class MemberDto {
         private String phone;
         private String address;
         private Integer age;
+    }
 
+    @Getter
+    @Setter
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public static class IsDeleted{
+        private Member.isDeleted isDeleted;
     }
 }

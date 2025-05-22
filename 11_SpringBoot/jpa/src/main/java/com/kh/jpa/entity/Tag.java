@@ -1,23 +1,26 @@
+
 package com.kh.jpa.entity;
 
 
 import jakarta.persistence.*;
-
-import java.util.ArrayList;
-import java.util.List;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
+@Builder
 public class Tag {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "TAG_ID")
-    private String tagId;
-
+    private Long tagId;
 
     @Column(name = "TAG_NAME", length = 30, nullable = false, unique = true)
     private String tagName;
-
-    @OneToMany(mappedBy = "tag", cascade = CascadeType.ALL)
-    private List<BoardTag> boardTags = new ArrayList<>();
-}
+} 

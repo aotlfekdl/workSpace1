@@ -19,6 +19,7 @@ public class MemberController {
     @PostMapping
     public ResponseEntity<String> addMember(@RequestBody MemberDto.Create createDto) {
         String userId = memberService.createMember(createDto);
+        System.out.println(userId);
         return ResponseEntity.ok(userId);
     }
 
@@ -30,7 +31,7 @@ public class MemberController {
 
     //전체 회원 조회
     @GetMapping
-    public ResponseEntity<List<MemberDto.Response>> getAllMembers() {return ResponseEntity.ok(memberService.findAllMembers());}
+    public ResponseEntity<List<MemberDto.Response>> getAllMembers() {return ResponseEntity.ok(memberService.findAllMember());}
 
     //회원수정
     @PutMapping("/{userId}")
@@ -42,6 +43,13 @@ public class MemberController {
     @DeleteMapping("/{userId}")
     public ResponseEntity<Void> deleteMember(@PathVariable String userId) {
         memberService.deleteMember(userId);
+        return ResponseEntity.ok().build();
+    }
+
+    //회원삭제(isdeleted 변경 버전)
+    @PatchMapping("/{userId}")
+    public ResponseEntity<Void> isDeletedMember(@PathVariable String userId) {
+        memberService.isDeletedMember(userId);
         return ResponseEntity.ok().build();
     }
 
