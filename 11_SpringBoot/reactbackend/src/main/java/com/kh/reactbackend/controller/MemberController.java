@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 
 @CrossOrigin
@@ -19,15 +20,18 @@ public class MemberController {
 
     //회원등록API
     @PostMapping
-    public ResponseEntity<String> addMember(@RequestBody MemberDto.Create createDto) {
+    public ResponseEntity<String> addMember(@ModelAttribute MemberDto.Create createDto) throws IOException {
+        System.out.println("Create Member: " + createDto.getUser_id());
         String userId = memberService.createMember(createDto);
+        System.out.println("아이디"+createDto.getUser_id());
         System.out.println(userId);
         return ResponseEntity.ok(userId);
     }
 
     //회원조회
-    @GetMapping("/{userId}")
-    public ResponseEntity<MemberDto.Response> getMember(@PathVariable String userId) {
+    @GetMapping("/{id}")
+    public ResponseEntity<MemberDto.Response> getMember(@PathVariable("id") String userId) {
+        System.out.println("Get Member: ");
         return ResponseEntity.ok(memberService.findMember(userId));
     }
 
@@ -37,7 +41,10 @@ public class MemberController {
 
     //회원수정
     @PutMapping("/{userId}")
-    public ResponseEntity<MemberDto.Response> updateMember(@PathVariable String userId, @RequestBody MemberDto.Update updateDto) {
+    public ResponseEntity<MemberDto.Response> updateMember(@PathVariable("userId") String userId, @ModelAttribute MemberDto.Update updateDto) throws IOException {
+        System.out.println("String : userId = ::" + userId);
+
+
         return ResponseEntity.ok(memberService.updateMember(userId, updateDto));
     }
 
@@ -63,10 +70,20 @@ public class MemberController {
 
     //로그인 기능
     @PostMapping("/login")
-    public ResponseEntity<Member> login(@RequestBody MemberDto.login loginDto) {
+    public ResponseEntity<MemberDto.MemberLoginResponse> login(@RequestBody MemberDto.login loginDto) {
+        Member member = memberService.loginMember(loginDto);
 
-        return ResponseEntity.ok(memberService.loginMember(loginDto));
 
+        if (member == null) {
+
+            return ResponseEntity.ok().build();
+
+        }
+
+
+
+
+        return ResponseEntity.ok(memberService.MemberLoginResponse(member));
     }
 
 }

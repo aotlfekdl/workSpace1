@@ -6,7 +6,4 @@ public class CommonEnums {
         Y, N
     }
 
-    public enum Gender{
-        M, F
-    }
 }

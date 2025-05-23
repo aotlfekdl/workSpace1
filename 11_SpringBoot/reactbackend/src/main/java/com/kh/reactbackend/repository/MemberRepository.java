@@ -14,4 +14,5 @@ public interface MemberRepository {
     List<Member> findByName(String name);
     void isDeleted(Member member);
     Optional<Member> findByIdandPwd(String userId, String userPwd);
+    MemberDto.MemberLoginResponse MemberLoginResponse(Member member);
 }

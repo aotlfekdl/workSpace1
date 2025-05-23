@@ -56,4 +56,17 @@ public class MemberRepositoryImpl implements MemberRepository {
         return em.createQuery(query, Member.class).setParameter("userId", userId).setParameter("userPwd", userPwd).getResultList().stream().findFirst();
 
     }
+
+    @Override
+    public MemberDto.MemberLoginResponse MemberLoginResponse(Member member) {
+        String query = "select m from Member m where m.userId = :userId";
+        return em.createQuery(query, Member.class)
+                .setParameter("userId", member.getUserId())
+                .getResultStream()
+                .map(MemberDto.MemberLoginResponse::toDto)
+                .findFirst()
+                .orElse(null);
+        //return em.createQuery(query, Member.class).setParameter("userId", member.getUserId()).getResultStream().map(MemberDto.MemberLoginResponse::toDto).findFirst().orElse(null);
+//        return em.createQuery(query, Member.class).setParameter("userId", member.getUserId()).getResultStream();
+    }
 }

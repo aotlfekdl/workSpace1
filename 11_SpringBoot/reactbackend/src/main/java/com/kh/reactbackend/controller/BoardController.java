@@ -29,6 +29,7 @@ public class BoardController {
     @GetMapping
     public ResponseEntity<PageResponse<BoardDto.Response>> getBoards(
             @PageableDefault(size = 5, sort = "createDate", direction = Sort.Direction.DESC) Pageable pageable) {
+
         return ResponseEntity.ok(new PageResponse<>(boardService.getBoardList(pageable)));
     }
 
@@ -38,17 +39,21 @@ public class BoardController {
         return ResponseEntity.ok(boardService.getBoardDetail(boardNo));
     }
 
+    //board 게시글 등록
     @PostMapping
     public ResponseEntity<Long> createBoard(@ModelAttribute BoardDto.Create boardCreate) throws Exception {
+
         return ResponseEntity.ok(boardService.createBoard(boardCreate));
     }
 
+    //board 게시글 삭제
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteBoard(@PathVariable("id") Long boardNo) {
         boardService.deleteBoard(boardNo);
         return ResponseEntity.ok().build();
     }
 
+    //board 게시글 수정
     @PatchMapping("/{id}")
     public ResponseEntity<BoardDto.Response> updateBoard(@PathVariable("id") Long boardNo, @ModelAttribute BoardDto.Update updateBoard) throws IOException {
         ;

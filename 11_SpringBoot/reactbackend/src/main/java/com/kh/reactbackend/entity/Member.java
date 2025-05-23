@@ -32,14 +32,14 @@ public class Member {
     @Column(length = 254)
     private String email;
 
-    @Column(name = "GENDER", length = 1)
-    @Enumerated(EnumType.STRING)
-    private Gender gender;
-
     @Column(length = 13)
     private String phone;
 
+    @Column(name = "ORIGIN_NAME", length = 100)
+    private String originName;
 
+    @Column(name = "CHANGE_NAME", length = 100)
+    private String changeName;
 
     @Column(name = "ENROLL_DATE")
     private LocalDateTime enrollDate;
@@ -65,26 +65,24 @@ public class Member {
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     List<Notice> notices = new ArrayList<>();
 
-    //회원 : 프로필 (1 : 1)
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "PROFILE_ID", unique = true)
-    private Profile profile;
 
 
-    public enum Gender {
-        M, F
-    }
     public enum isDeleted {
         Y, N
     }
 
-    public void updateMemberInfo(String userName, String email, Gender gender, String phone) {
+    public void updateMemberInfo( String userName,String userPwd, String email, String phone, CommonEnums.Status status) {
         this.userName = userName;
+        this.userPwd = userPwd;
         this.email = email;
-        this.gender = gender;
         this.phone = phone;
+        this.status = status;
 
+    }
 
+    public void changeFile(String originName, String changeName) {
+        this.originName = originName;
+        this.changeName = changeName;
     }
 
     @PrePersist

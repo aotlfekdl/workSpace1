@@ -44,6 +44,17 @@ public class BoardDto {
         }
     }
 
+    @Getter
+    @AllArgsConstructor
+    public static class getBoard {
+        private Long board_no;
+        private String board_title;
+        private String user_id;
+        private MultipartFile file;
+
+
+    }
+
 
 
     @Getter
