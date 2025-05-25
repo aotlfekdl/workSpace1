@@ -4,6 +4,7 @@ import com.kh.reactbackend.dto.BoardDto;
 import com.kh.reactbackend.dto.PageResponse;
 import com.kh.reactbackend.service.BoardService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -28,9 +29,22 @@ public class BoardController {
     //boardList 가져오는 용도
     @GetMapping
     public ResponseEntity<PageResponse<BoardDto.Response>> getBoards(
+            @RequestParam(required = false) String keyword,
             @PageableDefault(size = 5, sort = "createDate", direction = Sort.Direction.DESC) Pageable pageable) {
 
-        return ResponseEntity.ok(new PageResponse<>(boardService.getBoardList(pageable)));
+
+        Page<BoardDto.Response> result;
+        if (keyword == null || keyword.isBlank()) {
+            result = boardService.getBoardList(pageable);
+            System.out.println("11111");
+        } else {
+            result = boardService.searchBoards(keyword, pageable);
+            System.out.println("keyWord: " + keyword);
+            System.out.println("2222");
+            System.out.println(pageable);
+        }
+
+            return ResponseEntity.ok(new PageResponse<>(result));
     }
 
     //boardNo로 보드 조회하기
@@ -46,12 +60,14 @@ public class BoardController {
         return ResponseEntity.ok(boardService.createBoard(boardCreate));
     }
 
-    //board 게시글 삭제
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteBoard(@PathVariable("id") Long boardNo) {
-        boardService.deleteBoard(boardNo);
-        return ResponseEntity.ok().build();
-    }
+        //board 게시글 삭제
+        @DeleteMapping("/{id}")
+        public ResponseEntity<Void> deleteBoard(@PathVariable("id") Long boardNo) {
+
+            System.out.println("Delete Board::::" + boardNo);
+            boardService.deleteBoard(boardNo);
+            return ResponseEntity.ok().build();
+        }
 
     //board 게시글 수정
     @PatchMapping("/{id}")
@@ -61,4 +77,15 @@ public class BoardController {
         return ResponseEntity.ok(boardService.updateBoard(boardNo, updateBoard));
 
     }
+
+
+//    //board 검색
+//    @GetMapping
+//    public ResponseEntity<PageResponse<BoardDto.Response>> getBoards(
+//            @RequestParam(required = false) String keyword,
+//            @PageableDefault(size = 10, sort = "boardNo", direction = Sort.Direction.DESC) Pageable pageable) {
+//
+//
+//        return ResponseEntity.ok(new PageResponse<>(boardService.searchBoards(keyword, pageable)));
+//    }
 }

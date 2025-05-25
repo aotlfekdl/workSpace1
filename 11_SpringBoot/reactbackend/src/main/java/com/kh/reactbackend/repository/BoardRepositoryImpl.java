@@ -54,6 +54,26 @@ public class BoardRepositoryImpl implements BoardRespository {
         em.remove(board);
     }
 
+    @Override
+    public Page<Board> searchBoards(String keyword, CommonEnums.Status status, Pageable pageable) {
+        String query = "select b from Board b where b.status=:status and b.boardTitle like :keyword";
+        List<Board> boards = em.createQuery(query, Board.class)
+                .setParameter("status",status)
+                .setParameter("keyword", "%" + keyword + "%")
+                .setFirstResult((int) pageable.getOffset())
+                .setMaxResults(pageable.getPageSize())
+                .getResultList();
+
+        String countQuery = "select count(b) from Board b where b.status=:status and b.boardTitle like :keyword";
+        Long totalCount = em.createQuery(countQuery, Long.class)
+                .setParameter("status", status)
+                .setParameter("keyword", "%" + keyword + "%")
+                .getSingleResult();
+
+
+        return new PageImpl<Board>(boards, pageable, totalCount);
+    }
+
 //
 //    @Override
 //    public Page<Board> findByStatus(CommonEnums.Status status, Pageable pageable) {

@@ -12,5 +12,6 @@ public interface BoardService {
     Long createBoard(BoardDto.Create createBoard)throws Exception;
     void deleteBoard(Long boardNo);
     BoardDto.Response updateBoard(Long boardNo ,BoardDto.Update boardDto) throws IOException;
+    Page<BoardDto.Response> searchBoards(String keyword, Pageable pageable);
 
 }
