@@ -13,4 +13,5 @@ public interface BoardRespository {
     Long save(Board board);
 
     void delete(Board board);
+    Page<Board> searchBoards(String keyword,CommonEnums.Status status, Pageable pageable);
 }

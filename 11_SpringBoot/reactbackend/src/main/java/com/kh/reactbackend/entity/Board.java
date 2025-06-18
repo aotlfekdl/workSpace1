@@ -23,7 +23,6 @@ public class Board {
     @Column(name = "BOARD_TITLE", length = 30, nullable = false)
     private String boardTitle;
 
-    //@Lob : 대용량 데이터 매핑
     @Column(name = "BOARD_CONTENT", nullable = false)
     @Lob
     private String boardContent;

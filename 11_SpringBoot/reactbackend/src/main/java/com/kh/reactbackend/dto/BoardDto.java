@@ -102,6 +102,7 @@ public class BoardDto {
                     .origin_name(board.getOriginName())
                     .count(board.getCount())
                     .create_date(board.getCreateDate())
+                    .change_name(board.getChangeName())
                     .user_id(board.getMember()
                             .getUserId())
                     .build();

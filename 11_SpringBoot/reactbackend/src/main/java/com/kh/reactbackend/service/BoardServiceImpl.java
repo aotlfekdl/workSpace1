@@ -28,11 +28,12 @@ public class BoardServiceImpl implements BoardService {
     private final BoardRespository boardRespository;
     private final MemberRepository memberRepository;
     private final TagRepository tagRepository;
-    private final String UPLOAD_PATH = "C:\\dev_tool\\";
+    private final String UPLOAD_PATH = "C:\\workspace\\11_SpringBoot\\reactbackend\\src\\main\\resources\\static\\uploadFile\\";
 
     @Override
     public Page<BoardDto.Response> getBoardList(Pageable pageable) {
         Page<Board> page = boardRespository.findByStatus(CommonEnums.Status.Y, pageable);
+
         return page.map(BoardDto.Response::toSimpleDto);
     }
 
@@ -136,7 +137,11 @@ public class BoardServiceImpl implements BoardService {
         return BoardDto.Response.toDto(board);
     }
 
-
+    @Override
+    public Page<BoardDto.Response> searchBoards(String keyword, Pageable pageable) {
+        Page<Board> page = boardRespository.searchBoards(keyword, CommonEnums.Status.Y, pageable);
+        return page.map(BoardDto.Response::toSimpleDto);
+    }
 
 //
 //    @Override
