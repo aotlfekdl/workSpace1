@@ -1,13 +1,15 @@
 package n.genaric.ex1;
 
-public class Nut extends Farm {
+import java.util.Objects;
+
+public class Nut extends Farm{
 	private String name;
 
 	public Nut() {
 		super();
 	}
 
-	public Nut(String kind,String name) {
+	public Nut(String kind, String name) {
 		super(kind);
 		this.name = name;
 	}
@@ -21,23 +23,24 @@ public class Nut extends Farm {
 	}
 
 	@Override
+	public String toString() {
+		return "견과: " + name;
+	}
+
+	@Override
 	public int hashCode() {
-		// TODO Auto-generated method stub
-		return super.hashCode();
+		return Objects.hash(super.hashCode(), name);
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		return super.equals(obj);
+		if(obj instanceof Nut) {
+			Nut n = (Nut)obj;
+			if(n.getName().equals(this.name) && !super.equals(n.getKind())) {
+				return true;
+			}
+		}
+		return false;
 	}
-
-	@Override
-	public String toString() {
-		return "Nut [name=" + name + "]";
-	}
-	
-	
-	
 
 }

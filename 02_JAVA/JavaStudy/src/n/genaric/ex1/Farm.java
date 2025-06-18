@@ -1,5 +1,7 @@
 package n.genaric.ex1;
 
+import java.util.Objects;
+
 public class Farm {
 	private String kind;
 
@@ -22,27 +24,23 @@ public class Farm {
 
 	@Override
 	public String toString() {
-		return "Farm [kind=" + kind + "]";
+		return "(" + kind + ")";
 	}
-
-	
 
 	@Override
 	public int hashCode() {
-		return super.hashCode();
+		return Objects.hash(kind);
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		if(obj instanceof Farm) {
-			Farm f= (Farm)obj;
-			if(this.kind.equals(f.getKind())) {
+		if(obj instanceof Fruit) {
+			Farm f = (Fruit)obj;
+			if(f.getKind().equals(this.kind)) {
 				return true;
 			}
-			
 		}
 		return false;
 	}
 
-	
 }

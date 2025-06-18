@@ -1,6 +1,8 @@
 package n.genaric.ex1;
 
-public class Vegetable {
+import java.util.Objects;
+
+public class Vegetable extends Farm{
 	private String name;
 
 	public Vegetable() {
@@ -8,7 +10,7 @@ public class Vegetable {
 	}
 
 	public Vegetable(String kind, String name) {
-		super();
+		super(kind);
 		this.name = name;
 	}
 
@@ -22,22 +24,23 @@ public class Vegetable {
 
 	@Override
 	public String toString() {
-		return "Vegetable [name=" + name + "]";
+		return "채소: " + name;
 	}
 
 	@Override
 	public int hashCode() {
-		// TODO Auto-generated method stub
-		return super.hashCode();
+		return Objects.hash(super.hashCode(), name);
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		return super.equals(obj);
+		if(obj instanceof Vegetable) {
+			Vegetable v = (Vegetable)obj;
+			if(v.getName().equals(this.name) && !super.equals(v.getKind())) {
+				return true;
+			}
+		}
+		return false;
 	}
-	
-	
-	
 
 }
