@@ -1,5 +1,7 @@
 package n.genaric.ex1;
 
+import java.util.Objects;
+
 public class Fruit extends Farm{
 	private String name;
 
@@ -21,22 +23,25 @@ public class Fruit extends Farm{
 	}
 
 	@Override
+	public String toString() {
+		return "과일: " + name;
+	}
+
+
+	@Override
 	public int hashCode() {
-		// TODO Auto-generated method stub
-		return super.hashCode();
+		return Objects.hash(super.hashCode(), name);
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		return super.equals(obj);
+		if(obj instanceof Fruit) {
+			Fruit f = (Fruit)obj;
+			if(f.getName().equals(this.name) && !super.equals(f.getKind())) {
+				return true;
+			}
+		}
+		return false;
 	}
-
-	@Override
-	public String toString() {
-		return "Fruit [name=" + name + "]";
-	}
-	
-	
 
 }
