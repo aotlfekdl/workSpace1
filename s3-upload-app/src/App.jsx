@@ -5,18 +5,16 @@ import "./App.css";
 
 function App() {
   const [file, setFile] = useState(null);
-  const [status, setStatus] = useState("");
-  const [selectedFileName, setSelectedFileName] = useState("");
-  const [downloadFileName, setdownloadFileName] = useState("");
-  
+  const [downloadFileInfo, setDownloadFileInfo] = useState(null);
+  const [status, setStatus] = useState('');
 
-  const handleFileChange = (e) => {
-    const selectedFile = e.target.files[0];
-    setFile(selectedFile);
-    setSelectedFileName(selectedFile ? selectedFile.name : "");
-  };
+  // const handleFileChange = (e) => {
+  //   const selectedFile = e.target.files[0];
+  //   setFile(selectedFile);
+  //   setSelectedFileName(selectedFile ? selectedFile.name : "");
+  // };
 
-  const uploadFile = async (path) => {
+  const uploadFile = async () => {
     if (!file) return alert("파일을 선택하세요");
 
     try {
@@ -28,27 +26,31 @@ function App() {
       const encodedFilename = encodeURIComponent(uniqueFilename);
 
       // Step 1: Lambda API 호출 → Presigned URL 받기
-      const response = await axios.get("https://u9kn9paxaa.execute-api.ap-northeast-2.amazonaws.com/default", {
+      const response = await axios.get(lambdaAPI, {
         params: {
-          filename: path+encodedFilename,
+          filename: `user-profile/${encodedFilename}`,
           contentType: file.type,
         },
       });
+      console.log(response.data);
       const { statusCode, body } = response.data;
     
 
       if (statusCode === 200) {
         const bodyData = JSON.parse(body); // 중첩된 JSON 문자열 처리
         const presignedUrl = bodyData.url;
-  
         // 2. Presigned URL을 통해 S3에 직접 업로드
         await axios.put(presignedUrl, file, {
           headers: {
             "Content-Type": file.type,
           },
         });
- 
-        setdownloadFileName(encodedFilename)
+  
+        
+        setDownloadFileName(encodedFilename)
+        if(path){
+          setUploadProfile(path + encodedFilename);
+        }
         setStatus("업로드 완료!");
       } else {
         console.error("Presigned URL 요청 실패:", response.data);
@@ -103,9 +105,6 @@ function App() {
         <input type="file" onChange={handleFileChange} />
         <button onClick={uploadFile} disabled={!file}>
           업로드
-        </button>
-        <button onClick={() => uploadFile("user-profile/")} disabled={!file}>
-          파일 업로드
         </button>
       </div>
 
